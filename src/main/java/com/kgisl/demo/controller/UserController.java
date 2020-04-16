@@ -50,11 +50,11 @@ public class UserController {
        return new ResponseEntity<>(actual,headers, HttpStatus.CREATED);
    }
 
-@GetMapping(value="/")
-public boolean loginCheck(String email,String userName){
- boolean b=  userService.login(email,userName);
- return b;
-}
+// @GetMapping(value="/")
+// public boolean loginCheck(String email,String userName){
+//  boolean b=  userService.login(email,userName);
+//  return b;
+// }
 
    @GetMapping("/")
    public @ResponseBody ResponseEntity<List<User>> all() {

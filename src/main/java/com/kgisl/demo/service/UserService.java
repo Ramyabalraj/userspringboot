@@ -11,5 +11,5 @@ public interface UserService {
     public User findById(Long id);
     public User update(Long id,User user);
     public void deleteById(Long id);
-    public Boolean login(String email,String name) ;
+  //  public Boolean login(String email,String name) ;
 }
