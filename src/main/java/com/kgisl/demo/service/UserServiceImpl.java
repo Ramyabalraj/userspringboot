@@ -31,7 +31,7 @@ String email=user.getUserEmail();
       return userRepository.save(user);
         }
         }
-     System.out.println("Already exists...");
+     System.out.println("Already exists");
     return null;
     
      }
