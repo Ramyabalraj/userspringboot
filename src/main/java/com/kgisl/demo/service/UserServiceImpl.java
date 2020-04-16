@@ -36,14 +36,7 @@ String email=user.getUserEmail();
     
      }
  
-//  public Boolean login(String email,String name){
-//      System.out.println(userRepository.findByuserEmailAnduserName(email,name));
-//      if(userRepository.findByuserEmailAnduserName(email,name)){
-//          return true;
-//      }
-     
-//      return false;
-//  }
+
  
 
     public List<User> get() {
