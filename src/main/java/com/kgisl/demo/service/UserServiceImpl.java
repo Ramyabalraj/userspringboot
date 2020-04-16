@@ -7,7 +7,7 @@ import javax.transaction.Transactional;
 
 import com.kgisl.demo.entity.User;
 import com.kgisl.demo.repository.UserRepository;
-
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +36,22 @@ String email=user.getUserEmail();
     
      }
  
+public String login(String email,String name) {
+   
+ if((email=="")&& (name=="")){
 
+        }
+        else{
+        Boolean e=  userRepository.existsByuserEmail(email);
+          Boolean b=  userRepository.existsByuserName(name);
+       if((e == true)&&(b == true)){
+      
+      return "passed";
+        }
+        }
+     System.out.println("Already exists");
+    return "failed";
+}
  
 
     public List<User> get() {

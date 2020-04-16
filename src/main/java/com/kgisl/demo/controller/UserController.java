@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -51,7 +52,17 @@ public class UserController {
    }
 
 
-
+@PostMapping(value="/value/")
+public ResponseEntity<String> login(@RequestParam String email,@RequestParam String name){
+ String user = userService.login(email,name);
+       if (user == "failed")  {
+           System.out.println("no data");
+           
+           return new ResponseEntity<>(user,HttpStatus.NOT_FOUND);
+       }
+      
+    return new ResponseEntity<>(user, HttpStatus.OK);
+}
    @GetMapping("/")
    public @ResponseBody ResponseEntity<List<User>> all() {
        return new ResponseEntity<>(userService.get(), HttpStatus.OK);
