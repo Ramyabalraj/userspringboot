@@ -53,9 +53,9 @@ public class UserController {
 
 
 @PostMapping(value="/value/")
-public ResponseEntity<String> login(@RequestParam String email,@RequestParam String name){
- String user = userService.login(email,name);
-       if (user == "failed")  {
+public ResponseEntity<User> login(@RequestBody User current){
+ User user = userService.login(current);
+       if (user == null)  {
            System.out.println("no data");
            
            return new ResponseEntity<>(user,HttpStatus.NOT_FOUND);

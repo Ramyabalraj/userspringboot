@@ -36,8 +36,9 @@ String email=user.getUserEmail();
     
      }
  
-public String login(String email,String name) {
-   
+public User login(User user) {
+   String email=user.getUserEmail();
+   String name=user.getUserName();
  if((email=="")&& (name=="")){
 
         }
@@ -46,11 +47,11 @@ public String login(String email,String name) {
           Boolean b=  userRepository.existsByuserName(name);
        if((e == true)&&(b == true)){
       
-      return "passed";
+      return user;
         }
         }
-     System.out.println("Already exists");
-    return "failed";
+     System.out.println("Invalid");
+    return null;
 }
  
 
