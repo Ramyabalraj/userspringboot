@@ -16,7 +16,7 @@ var uEmail;
 
 function getUsers() {
     $.ajax({
-        url: "http://localhost:8080/api/Users/",
+        url: "https://lms--java.herokuapp.com/api/Users/",
         // dataType: 'json',
         success: function (results) {
             myList = results;
@@ -44,7 +44,7 @@ function saveOrUpdateUser() {
         };
         $.ajax({
 
-            url: "http://localhost:8080/api/Users/" + bId,
+            url: "https://lms--java.herokuapp.com/api/Users/" + bId,
 
             method: "PUT",
             data: JSON.stringify(jsondata),
@@ -79,7 +79,7 @@ function saveOrUpdateUser() {
             "userName": UserName
         };
         $.ajax({
-            url: "http://localhost:8080/api/Users/",
+            url: "https://lms--java.herokuapp.com/api/Users/",
 
             method: "POST",
             data: JSON.stringify(jsondata),
@@ -151,7 +151,7 @@ function viewUsers() {
 function editUser(id) {
 
     $.ajax({
-        url: "http://localhost:8080/api/Users/" + id,
+        url: "https://lms--java.herokuapp.com/api/Users/" + id,
         // dataType: 'json',
         success: function (user) {
             console.log("data" + user.userName);
@@ -182,7 +182,7 @@ function updateUser() {
         "userName": UserName
     };
     $.ajax({
-        url: "http://localhost:8080/api/Users/",
+        url: "https://lms--java.herokuapp.com/api/Users/",
 
         method: "POST",
         data: JSON.stringify(jsondata),
@@ -203,7 +203,7 @@ function updateUser() {
 //delete user       
 function deleteUser(id) {
     $.ajax({
-        url: "http://localhost:8080/api/Users/" + id,
+        url: "https://lms--java.herokuapp.com/api/Users/" + id,
         method: "DELETE",
         success: function (data) {
             console.log("data" + data);
